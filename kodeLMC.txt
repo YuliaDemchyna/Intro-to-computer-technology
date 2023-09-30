@@ -1,0 +1,28 @@
+        INP
+        STA a
+        STA b
+bigloop LDA minusone
+        STA teller 
+babyloop LDA teller
+        ADD one
+        STA teller
+        LDA a
+        SUB two
+        STA a
+        BRP babyloop
+        LDA b 
+        SUB teller
+        SUB teller
+        OUT
+        LDA teller
+        STA b
+        STA a
+        SUB one 
+        BRP bigloop
+        HLT
+a       DAT 0
+b       DAT 0
+two     DAT 2
+one     DAT 1
+teller  DAT -1
+minusone DAT -1
